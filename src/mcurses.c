@@ -71,7 +71,7 @@ void setFunction_getchar(char (*functionPoitner)(void))
 
 void setFunction_putchar(void (*functionPoitner)(uint8_t ch))
 {
-	FunctionPointer_putchar = functionPoitner;
+	FunctionPointer_putchar = (void (*)(uint_fast8_t))functionPoitner;
 }
 
 static uint_fast8_t mcurses_phyio_init (void)
