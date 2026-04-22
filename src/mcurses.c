@@ -49,6 +49,9 @@
 #define SEQ_RESET_SCRREG                        PSTR("\033[r")                  // reset scrolling region
 #define SEQ_LOAD_G1                             PSTR("\033)0")                  // load G1 character set
 #define SEQ_CURSOR_VIS                          PSTR("\033[?25")                // set cursor visible/not visible
+#define SEQ_QUERY                                   PSTR("\033[18t")
+#define SEQ_LINE_ON                                 PSTR("\033(0")
+#define SEQ_LINE_OFF                                PSTR("\033(B")
 
 static uint_fast8_t                             mcurses_scrl_start = 0;         // start of scrolling region, default is 0
 static uint_fast8_t                             mcurses_scrl_end = LINES - 1;   // end of scrolling region, default is last line
@@ -763,4 +766,19 @@ endwin (void)
     refresh ();                                                                 // flush output
     mcurses_phyio_done ();                                                      // end of physical I/O
     mcurses_is_up = 0;
+}
+
+void query(void)
+{
+    mcurses_puts_P (SEQ_QUERY);
+}
+
+void lineOn()
+{
+    mcurses_puts_P (SEQ_LINE_ON);
+}
+
+void lineOff()
+{
+    mcurses_puts_P (SEQ_LINE_OFF);
 }
