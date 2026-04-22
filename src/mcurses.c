@@ -782,3 +782,10 @@ void lineOff(void)
 {
     mcurses_puts_P (SEQ_LINE_OFF);
 }
+
+void quickVLine(void)
+{
+    lineOn();
+    addch(LINE_VERTICAL);
+    lineOff();
+}
