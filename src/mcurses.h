@@ -116,6 +116,9 @@ void                     lineOn(void);
 void                     lineOff(void);
 
 void                     quickVLine(void);
+void                     drawBoxTop(uint_fast8_t);
+void                     drawBoxBottom(uint_fast8_t);
+void                     drawBoxLine(uint_fast8_t width, char* string);
 
 /*---------------------------------------------------------------------------------------------------------------------------------------------------
  * mcurses macros

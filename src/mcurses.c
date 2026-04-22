@@ -13,7 +13,6 @@
  * (at your option) any later version.
  *---------------------------------------------------------------------------------------------------------------------------------------------------
  */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -787,5 +786,41 @@ void quickVLine(void)
 {
     lineOn();
     addch(LINE_VERTICAL);
+    lineOff();
+}
+
+void drawBoxTop(uint_fast8_t width)
+{
+    lineOn();
+    addch(LINE_UL_CORNER);
+    for (int i = 1; i < width - 1; i++)
+    {
+        addch(LINE_HORIZONTAL);
+    }
+    addch(LINE_UR_CORNER);
+    lineOff();
+}
+
+void drawBoxLine(uint_fast8_t width, char* string)
+{
+    char buffer[width - 1];
+
+    snprintf(buffer, sizeof(buffer), "%-*.*s", width - 2, width - 2, string);
+
+    quickVLine();
+    addstr(buffer);
+    quickVLine();
+}
+
+
+void drawBoxBottom(uint_fast8_t width)
+{
+    lineOn();
+    addch(LINE_LL_CORNER);
+    for (int i = 1; i < width - 1; i++)
+    {
+        addch(LINE_HORIZONTAL);
+    }
+    addch(LINE_LR_CORNER);
     lineOff();
 }
