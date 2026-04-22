@@ -773,12 +773,12 @@ void query(void)
     mcurses_puts_P (SEQ_QUERY);
 }
 
-void lineOn()
+void lineOn(void)
 {
     mcurses_puts_P (SEQ_LINE_ON);
 }
 
-void lineOff()
+void lineOff(void)
 {
     mcurses_puts_P (SEQ_LINE_OFF);
 }
