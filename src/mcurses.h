@@ -191,7 +191,47 @@ void                     lineOff(void);
 #define ACS_STERLING            0x9d                                                // DEC graphic 0x7d: uk pound sign
 #define ACS_BULLET              0x9e                                                // DEC graphic 0x7e: bullet
 
+/*
+ 
+*/
+#define LINE_HORIZONTAL  0x71  /* 'q' -> ─ */
+#define LINE_VERTICAL    0x78  /* 'x' -> │ */
 
+/* Corners */
+#define LINE_UL_CORNER   0x6C  /* 'l' -> ┌ */
+#define LINE_UR_CORNER   0x6B  /* 'k' -> ┐ */
+#define LINE_LL_CORNER   0x6D  /* 'm' -> └ */
+#define LINE_LR_CORNER   0x6A  /* 'j' -> ┘ */
+
+/* T-Junctions (Tees) */
+#define LINE_T_TOP       0x77  /* 'w' -> ┬ */
+#define LINE_T_BOTTOM    0x76  /* 'v' -> ┴ */
+#define LINE_T_LEFT      0x74  /* 't' -> ├ */
+#define LINE_T_RIGHT     0x75  /* 'u' -> ┤ */
+
+/* Intersection */
+#define LINE_CROSS       0x6E  /* 'n' -> ┼ */
+
+/* Others */
+#define LINE_SCANLINE_1  0x6F  /* 'o' -> Horizontal line (top) */
+#define LINE_SCANLINE_9  0x73  /* 's' -> Horizontal line (bottom) */
+#define LINE_BLOCK       0x61  /* 'a' -> ▒ (Checkerboard/Block) */
+#define LINE_DIAMOND     0x60  /* '`' -> ◆ */
+#define LINE_DEGREE      0x66  /* 'f' -> ° */
+#define LINE_PLUSMINUS   0x67  /* 'g' -> ± */
+
+/* Additional VT100 Graphics Set Characters (Use after \033(0) */
+
+#define LINE_BULLET      0x7E  /* '~' -> · (Centered dot) */
+#define LINE_LE_EQUAL    0x79  /* 'y' -> ≤ (Less-than or equal) */
+#define LINE_GE_EQUAL    0x7A  /* 'z' -> ≥ (Greater-than or equal) */
+#define LINE_PI          0x7B  /* '{' -> π */
+#define LINE_NE_EQUAL    0x7C  /* '|' -> ≠ (Not equal) */
+#define LINE_STERLING    0x7D  /* '}' -> £ (British Pound) */
+
+/* Shading and Filling */
+#define LINE_BOARD       0x68  /* 'h' -> ▒ (Board/Square filling) */
+#define LINE_LANTERN     0x69  /* 'i' -> ␋ (Often shown as a lantern/light symbol) */
 
 	
 	#endif // __MCURSES__
