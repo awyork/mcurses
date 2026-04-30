@@ -129,7 +129,7 @@ extern "C"
 #define mcerase() clear()										  // clear total screen, same as clear()
 #define mvaddch(y, x, c) move((y), (x)), addch((c))				  // move cursor, then add character
 #define mvaddstr(y, x, s) move((y), (x)), addstr((s))			  // move cursor, then add string
-#define mvaddstrf(y, x, s, ...) move((y), (x)), addstrf((s, ...)) // move cursor, then add formatted string
+#define mvaddstrf(y, x, s, ...) move((y), (x)), addstrf(s, __VA_ARGS__) // move cursor, then add formatted string
 #define mvaddstr_P(y, x, s) move((y), (x)), addstr_P((s))		  // move cursor, then add string (PROGMEM)
 
 #define mvinsch(y, x, c) move((y), (x)), insch((c))			// move cursor, then insert character
